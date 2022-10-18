@@ -24,14 +24,23 @@ class ViewController: UIViewController {
         pre.positioning.contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pre.drawing.shadowOffset = CGSize(width: 0, height: 0)
         let contentView = UsageToolTipView(frame: CGRect(x: 0, y: 0, width: 320, height: 156))
-        CustomTipView.show(animated: true,
-                           forView: sender,
-                           withinSuperview: nil,
-                           contentView: contentView,
-                           preferences: pre)
+        
+        let customTipView = CustomTipView(contentView: contentView, preferences: pre, delegate: self)
+        customTipView.show(forView: sender)
     }
-
 }
+
+// take the callback
+extension ViewController : CustomTipViewDelegate {
+    func customTipViewDidDismiss(_ tipView: CustomTipView) {
+        print("dismiss")
+    }
+    
+    func customTipViewDidTap(_ tipView: CustomTipView) {
+        print("did tap")
+    }
+}
+
 
 
 extension UIView {

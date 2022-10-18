@@ -109,8 +109,8 @@ public extension CustomTipView {
         transform = initialTransform
         alpha = initialAlpha
         
-        //        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        //        addGestureRecognizer(tap)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+                addGestureRecognizer(tap)
         
         superview.addSubview(self)
         
