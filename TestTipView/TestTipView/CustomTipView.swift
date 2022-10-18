@@ -109,8 +109,8 @@ public extension CustomTipView {
         transform = initialTransform
         alpha = initialAlpha
         
-                let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-                addGestureRecognizer(tap)
+                //let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+                //addGestureRecognizer(tap)
         
         superview.addSubview(self)
         
@@ -482,7 +482,6 @@ open class CustomTipView: UIView {
         }
         
         if case .view(let contentView) = content {
-            contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.frame = getContentRect(from: getBubbleFrame())
         }
         
